@@ -4,16 +4,11 @@ $(function() {
     $('#postBtn').on('click', postListing);
     $('#closeBtn').on('click', closeForm);
 
-    const uluru = { lat: -25.344, lng: 131.036 };
+    const edmonton = { lat: 53.533, lng: -113.506 };
     // The map, centered at Uluru
     const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 4,
-        center: uluru,
-    });
-    // The marker, positioned at Uluru
-    const marker = new google.maps.Marker({
-        position: uluru,
-        map: map,
+        zoom: 7,
+        center: edmonton,
     });
     
 })
