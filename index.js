@@ -7,7 +7,7 @@ $(function() {
     const edmonton = { lat: 53.533, lng: -113.506 };
     // The map, centered at Uluru
     const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 7,
+        zoom: 10,
         center: edmonton,
     });
     
@@ -73,6 +73,7 @@ function postListing ()
     $('#post').append(div);
 
     //Use address to create Google Pin
+
 }
 
 function closeForm ()
