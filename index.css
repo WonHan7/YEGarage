@@ -5,8 +5,14 @@
     margin: 0;
     padding: 0;
 }
+a {
+    text-decoration: none;
+    color: black;
+}
 nav {
-    background-color: orange;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    background-color: #f8f4f4;
 }
 
 /* ID */
@@ -16,32 +22,53 @@ nav {
 }
 #wrapper {
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 3fr 1fr;
 }
 #map {
     grid-column: 1/2;
 
-    text-align: center;
-    height: 1000px;
-    background-color: beige;
+    height: 100vh;
 }
 #listing {
     grid-column: 2/3;
-    background-color: #01183f;
+
+    text-align: center;
+    color: #000000;
+    background-color: #FFFFFF;
+}
+#results {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-top: 5px;
+    padding-bottom: 10px;   
+    color: #000000;
+    background-color: #e0e4ec;
+}
+#post {
+    padding: 10px 0;
 }
 
 /* CLASS */
+.logo {
+    display: flex;
+    margin: 0 10px;
+    padding: 10px 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.logo-orange {
+    color: #ff4b00;
+}
 .add-btn {
-    background-color: #ff4b00;
-    color: white;
-    padding: 16px 20px;
+    grid-column: 2/3;
+    
+    width: 50%;
+    margin: 0 10px;
+    padding: 10px 10px;
+    opacity: 0.8;
+    justify-self: right;
     border: none;
     cursor: pointer;
-    opacity: 0.8;
-    position: fixed;
-    bottom: 23px;
-    right: 28px;
-    width: 280px;
+    color: white;
+    background-color: #ff4b00;
 }
 .form-popup {
     display: none;

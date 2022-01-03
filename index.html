@@ -16,9 +16,32 @@
 <body>
 
     <nav>
-        YEGarage
-        <!-- <button id="addBtn" class="add-btn">Add Garage Sale</button> -->
+        <a href="contact.html"><span class="logo"><h2 class="logo-orange">YEG</h2><h2>arage</h2></span></a>
+        <button id="addBtn" class="add-btn">Add Garage Sale</button>
     </nav>
+    
+    <div id="site">
+
+        <div id="wrapper">
+
+            <div id="map"></div>
+                
+            <div id="listing">
+                <div id="results">
+                    <h2>Results</h2>
+                    <label>(0)</label>
+                </div>
+                <div id="post">
+                    This is an example garage sale
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUUfivu0O21qha3WUsUy5CK8359LcVyQ8&callback=initMap">
+    </script>
 
     <!-- 
     <div class="form-popup" id="myForm">
@@ -89,23 +112,5 @@
     </div>
     -->
 
-    <div id="site">
-
-        <div id="wrapper">
-
-            <div id="map"></div>
-                
-            <div id="listing">
-                listing
-            </div>
-        </div>
-
-    </div>
-
-    <script async
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUUfivu0O21qha3WUsUy5CK8359LcVyQ8&callback=initMap">
-    </script>
-
-    
 </body>
 </html>
