@@ -32,29 +32,36 @@
                     <label>(0)</label>
                 </div>
                 <div id="post">
-                    This is an example garage sale
+                    <!-- Where posts go -->
                 </div>
             </div>
         </div>
 
     </div>
 
-    <script async
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUUfivu0O21qha3WUsUy5CK8359LcVyQ8&callback=initMap">
-    </script>
-
+    <!-- Popup Form -->
     <div class="form-popup" id="myForm">
         <form action="/action_page.php" class="form-container">
-            <h3 class="center">***ALL LISTINGS WILL AUTOMATICALLY BE REMOVED AFTER THE EVENT DATE***</h3>
+            <h3 class="center">***ALL LISTINGS WILL AUTOMATICALLY BE REMOVED AFTER THE END DATE***</h3>
         
             <div class="form-header">
                 <label for="address"><b>Address*</b></label>
                 <input type="text" placeholder="Enter Address" name="address" required>
             </div>
+
+            <div class="form-spacing">
+                <label for="images"><b>Image (PNG or JPEG)</b></label><br>
+                <input type="file" name="images" accept="image/png, image/jpeg">
+            </div>
         
             <div class="form-spacing">
-                <label for="date"><b>Date*</b></label><br>
-                <input type="date" name="date">
+                <label for="sdate"><b>Start Date*</b></label><br>
+                <input type="date" name="sdate">
+            </div>
+        
+            <div class="form-spacing">
+                <label for="edate"><b>End Date*</b></label><br>
+                <input type="date" name="edate">
             </div>
             
             <div class="form-spacing">
@@ -64,57 +71,48 @@
 
             <div class="form-spacing">
                 <label for="category"><b>Category</b></label><br>
-                <label class="container">
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
+                <label>
+                    <input type="checkbox" name="Books" value="Books">
                     Books
                 </label><br>
                 
-                <label class="container">
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
+                <label>
+                    <input type="checkbox" name="Video Games" value="Video Games">
                     Video Games
                 </label><br>
                 
-                <label class="container">
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
+                <label>
+                    <input type="checkbox" name="Electronics" value="Electronics">
                     Electronics
                 </label><br>
                 
-                <label class="container">
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
+                <label>
+                    <input type="checkbox" name="Home Tools" value="Home Tools">
                     Home, Garden, Pets & Tools
                 </label><br>
                 
-                <label class="container">
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
+                <label>
+                    <input type="checkbox" name="Toys" value="Toys">
                     Toys
                 </label><br>
                 
-                <label class="container">
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
+                <label>
+                    <input type="checkbox" name="Cloths" value="Cloths">
                     Clothing, Shoes & Jewelry
                 </label><br>
                 
-                <label class="container">
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
+                <label>
+                    <input type="checkbox" name="Sports" value="Sports">
                     Sports & Outdoors
                 </label><br>
                 
-                <label class="container">
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
+                <label>
+                    <input type="checkbox" name="Automobile" value="Automobile">
                     Automotive & Industrial
                 </label><br>
                 
-                <label class="container">
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
+                <label>
+                    <input type="checkbox" name="Hidden" value="Hidden">
                     Hidden Gems & Treasures
                 </label><br>
             </div>            
@@ -123,6 +121,10 @@
             <button type="button" id="closeBtn" class="btn cancel">Close</button>
         </form>
     </div>
+
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUUfivu0O21qha3WUsUy5CK8359LcVyQ8&callback=initMap">
+    </script>
 
 </body>
 </html>

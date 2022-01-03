@@ -43,9 +43,6 @@ nav {
     background-color: #e0e4ec;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-#post {
-    padding: 10px 0;
-}
 
 /* CLASS */
 .logo {
@@ -82,7 +79,7 @@ nav {
     z-index: 9;
     padding: 10px 10px;
     border: 3px solid #01183f;
-    background-color: #f8c8b3;
+    background-color: #f5e5de;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .form-container input[type=text] {
@@ -133,6 +130,25 @@ nav {
 
 .center {
     text-align: center;
+}
+
+/* Posts */
+.post-wrapper {
+    margin-bottom: 10px;
+    text-align: left;
+    border: 3px solid #f0ac8e;
+}
+.post-info-wrapper {
+    display: flex;
+}
+.post-info {
+    display: block;
+    margin: auto;
+    font-size: larger;
+}
+.post-img {
+    height: 150px;
+    width: 150px;
 }
 
 /* Desktop */
