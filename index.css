@@ -37,11 +37,11 @@ nav {
     background-color: #FFFFFF;
 }
 #results {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     padding-top: 5px;
     padding-bottom: 10px;   
     color: #000000;
     background-color: #e0e4ec;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 #post {
     padding: 10px 0;
@@ -57,6 +57,8 @@ nav {
 .logo-orange {
     color: #ff4b00;
 }
+
+/* Popup Form */
 .add-btn {
     grid-column: 2/3;
     
@@ -67,26 +69,25 @@ nav {
     justify-self: right;
     border: none;
     cursor: pointer;
-    color: white;
+    color: #ffffff;
     background-color: #ff4b00;
 }
 .form-popup {
     display: none;
     position: fixed;
-    bottom: 0;
-    right: 15px;
-    border: 3px solid #01183f;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
     z-index: 9;
-}
-.form-container {
-    max-width: 300px;
-    padding: 10px;
-    background-color: white;
+    padding: 10px 10px;
+    border: 3px solid #01183f;
+    background-color: #fda27b;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .form-container input[type=text] {
-    width: 100%;
+    width: 90%;
     padding: 15px;
-    margin: 5px 0 22px 0;
     border: none;
     background: #f1f1f1;
 }
@@ -112,6 +113,24 @@ nav {
 }
 .form-container .btn:hover, .open-button:hover {
     opacity: 1;
+}
+.form-header {
+    margin-bottom: 50px;
+}
+.form-spacing {    
+    margin: 5px 0 22px 0;
+}
+
+/* Custom Checkbox */
+.container {
+    cursor: pointer;
+}
+.container input {
+    cursor: pointer;
+}
+
+.center {
+    text-align: center;
 }
 
 /* Desktop */
