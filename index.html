@@ -44,82 +44,84 @@
     </script>
 
     <div class="form-popup" id="myForm">
-        <h3 class="center">***ALL LISTINGS WILL AUTOMATICALLY BE REMOVED AFTER THE EVENT DATE***</h3>
-    
-        <div class="form-spacing">
-            <label for="address" class="form-header"><b>Address*</b></label>
-            <input type="text" placeholder="Enter Address" name="address" required>
-        </div>
-    
-        <div class="form-spacing">
-            <label for="date" class="form-header"><b>Date*</b></label><br>
-            <input type="date" name="date">
-        </div>
+        <form action="/action_page.php" class="form-container">
+            <h3 class="center">***ALL LISTINGS WILL AUTOMATICALLY BE REMOVED AFTER THE EVENT DATE***</h3>
         
-        <div class="form-spacing">
-            <label for="time" class="form-header"><b>Time*</b></label><br>
-            <input type="time" name="time">
-        </div>
+            <div class="form-spacing">
+                <label for="address" class="form-header"><b>Address*</b></label>
+                <input type="text" placeholder="Enter Address" name="address" required>
+            </div>
+        
+            <div class="form-spacing">
+                <label for="date" class="form-header"><b>Date*</b></label><br>
+                <input type="date" name="date">
+            </div>
+            
+            <div class="form-spacing">
+                <label for="time" class="form-header"><b>Time*</b></label><br>
+                <input type="time" name="time">
+            </div>
 
-        <div class="form-spacing">
-            <label for="category" class="form-header"><b>Category</b></label><br>
-            <label class="container">
-                <input type="checkbox">
-                <span class="checkmark"></span>
-                Books
-            </label><br>
-            
-            <label class="container">
-                <input type="checkbox">
-                <span class="checkmark"></span>
-                Video Games
-            </label><br>
-            
-            <label class="container">
-                <input type="checkbox">
-                <span class="checkmark"></span>
-                Electronics
-            </label><br>
-            
-            <label class="container">
-                <input type="checkbox">
-                <span class="checkmark"></span>
-                Home, Garden, Pets & Tools
-            </label><br>
-            
-            <label class="container">
-                <input type="checkbox">
-                <span class="checkmark"></span>
-                Toys
-            </label><br>
-            
-            <label class="container">
-                <input type="checkbox">
-                <span class="checkmark"></span>
-                Clothing, Shoes & Jewelry
-            </label><br>
-            
-            <label class="container">
-                <input type="checkbox">
-                <span class="checkmark"></span>
-                Sports & Outdoors
-            </label><br>
-            
-            <label class="container">
-                <input type="checkbox">
-                <span class="checkmark"></span>
-                Automotive & Industrial
-            </label><br>
-            
-            <label class="container">
-                <input type="checkbox">
-                <span class="checkmark"></span>
-                Hidden Gems & Treasures
-            </label><br>
-        </div>            
-    
-        <button type="button" id="postBtn" class="btn post">Post</button>
-        <button type="button" id="closeBtn" class="btn cancel">Close</button>
+            <div class="form-spacing">
+                <label for="category" class="form-header"><b>Category</b></label><br>
+                <label class="container">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    Books
+                </label><br>
+                
+                <label class="container">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    Video Games
+                </label><br>
+                
+                <label class="container">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    Electronics
+                </label><br>
+                
+                <label class="container">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    Home, Garden, Pets & Tools
+                </label><br>
+                
+                <label class="container">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    Toys
+                </label><br>
+                
+                <label class="container">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    Clothing, Shoes & Jewelry
+                </label><br>
+                
+                <label class="container">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    Sports & Outdoors
+                </label><br>
+                
+                <label class="container">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    Automotive & Industrial
+                </label><br>
+                
+                <label class="container">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    Hidden Gems & Treasures
+                </label><br>
+            </div>            
+        
+            <button type="button" id="postBtn" class="btn post">Post</button>
+            <button type="button" id="closeBtn" class="btn cancel">Close</button>
+        </form>
     </div>
 
 </body>
