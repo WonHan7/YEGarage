@@ -1,14 +1,16 @@
+var val = true;
+
 $(function() {
 
     alert("Thank you for visiting YEGarage.com! This website is still a work in-progress.");
     $('#addBtn').on('click', addListing);
-    $('#postBtn').on('click', postListing);
+    $('#postBtn').on('click', Validate);
     $('#closeBtn').on('click', closeForm);
 
     const edmonton = { lat: 53.533, lng: -113.506 };
     // The map, centered at Uluru
     const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 15,
+        zoom: 12,
         center: edmonton,
     });
     
@@ -26,7 +28,8 @@ function postListing ()
     let pic = $('input[name=images]').val();
     let sdate = $('input[name=sdate]').val();
     let edate = $('input[name=edate]').val();
-    let time = $('input[name=time]').val();
+    let stime = $('input[name=stime]').val();
+    let etime = $('input[name=etime]').val();
     let check = $('input[type=checkbox]:checked');
 
     // Post Formatting - Add Google Maps Pin
@@ -44,7 +47,7 @@ function postListing ()
     let p3 = document.createElement('p');
 
     p1.appendChild(document.createTextNode("Date: " + sdate + " ~ " + edate));
-    p2.appendChild(document.createTextNode("Time: " + time));   //Change to 12 hour format with AM/PM
+    p2.appendChild(document.createTextNode("Time: " + stime + " ~ " + etime));   //Change to 12 hour format with AM/PM
     
     for (let i = 0; i < check.length; i++) {
         if (i == check.length-1)
@@ -93,4 +96,31 @@ function postListing ()
 function closeForm ()
 {    
     $('#myForm').css("display", "none");
+}
+
+function Validate ()
+{
+    let addr = $('input[name=address]').val();
+    let sdate = $('input[name=sdate]').val();
+    let edate = $('input[name=edate]').val();
+    let stime = $('input[name=time]').val();
+    let etime = $('input[name=time]').val();
+
+    if (addr == "")
+    {
+        val = false;
+    }
+    if ((sdate == "") || (edate == ""))
+    {
+        val = false;
+    }
+    if ((stime == "") || (etime == ""))
+    {
+        val = false;
+    }
+
+    if (val == true)
+    {
+        postListing();
+    }
 }
