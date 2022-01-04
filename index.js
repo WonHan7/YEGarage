@@ -1,5 +1,6 @@
 $(function() {
 
+    alert("Thank you for visiting YEGarage.com! This website is still a work in-progress.");
     $('#addBtn').on('click', addListing);
     $('#postBtn').on('click', postListing);
     $('#closeBtn').on('click', closeForm);
@@ -47,7 +48,7 @@ function postListing ()
     
     for (let i = 0; i < check.length; i++) {
         if (i == check.length-1)
-        {            
+        {
             arr += check[i].name;
         }
         else 
