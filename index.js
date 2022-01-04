@@ -8,7 +8,7 @@ $(function() {
     const edmonton = { lat: 53.533, lng: -113.506 };
     // The map, centered at Uluru
     const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 10,
+        zoom: 15,
         center: edmonton,
     });
     
@@ -74,7 +74,20 @@ function postListing ()
     $('#post').append(div);
 
     //Use address to create Google Pin
+    var geocoder = new google.maps.Geocoder();
 
+    geocoder.geocode({
+       'address': addr
+    }, 
+    function(results, status) {
+       if(status == google.maps.GeocoderStatus.OK) {
+          new google.maps.Marker({
+             position: results[0].geometry.location,
+             map: map
+          });
+          map.setCenter(results[0].geometry.location);
+       }
+    });
 }
 
 function closeForm ()
