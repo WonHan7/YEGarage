@@ -10,9 +10,8 @@ a {
     color: black;
 }
 nav {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
     background-color: #f8f4f4;
+    text-align: center;
 }
 
 /* ID */
@@ -22,16 +21,11 @@ nav {
 }
 #wrapper {
     display: grid;
-    grid-template-columns: 3fr 1fr;
 }
 #map {
-    grid-column: 1/2;
-
     height: 100vh;
 }
 #listing {
-    grid-column: 2/3;
-
     text-align: center;
     color: #000000;
     background-color: #FFFFFF;
@@ -43,33 +37,30 @@ nav {
     background-color: #e0e4ec;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+#filter {
+    padding: 10px 10px;
+    opacity: 0.8;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #ff4b00;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 
 /* CLASS */
 .logo {
     display: flex;
-    margin: 0 10px;
     padding: 10px 10px;
+    justify-content: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .logo-orange {
     color: #ff4b00;
 }
 
-/* Popup Form */
-.add-btn {
-    grid-column: 2/3;
-    
-    width: 50%;
-    margin: 0 10px;
-    padding: 10px 10px;
-    opacity: 0.8;
-    justify-self: right;
-    border: none;
-    cursor: pointer;
-    color: #ffffff;
-    background-color: #ff4b00;
-}
-.form-popup {
+/* Popup Filter */
+.filter-popup {
     display: none;
     position: fixed;
     top: 50%;
@@ -78,12 +69,40 @@ nav {
     width: 50%;
     z-index: 9;
     padding: 10px 10px;
+    border-radius: 15px;
+    color: #ffffff;
+    background-color: #8d99ae;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Popup Form */
+.add-btn {
+    padding: 10px 10px;
+    opacity: 0.8;
+    border-radius: 10px;
+    margin-right: 10px;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #ff4b00;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.form-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    z-index: 9;
+    padding: 10px 10px;
+    border-radius: 25px;
     border: 3px solid #01183f;
     background-color: #f5e5de;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .form-container input[type=text] {
-    width: 90%;
+    width: 85%;
     padding: 15px;
     border: none;
     background: #f1f1f1;
@@ -104,20 +123,44 @@ nav {
 }
 .form-container .cancel {
     background-color: red;
+    border-radius: 10px;
 }
 .form-container .post {
     background-color: #04AA6D;
+    border-radius: 10px;
 }
 .form-container .btn:hover, .open-button:hover {
     opacity: 1;
 }
 .form-header {
-    margin: 5px 0 22px 0;
+    margin: 5px 0 12px 0;
     line-height: 30px;
 }
 .form-spacing {    
-    margin: 5px 0 22px 0;
+    margin: 5px 0 10px 0;
     line-height: 22.5px;
+}
+.form-inside-spacing {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.start-input {
+    grid-column: 1/2;
+    width: 85%;
+    text-align: center;
+}
+.end-input {
+    grid-column: 2/3;
+    width: 85%;
+    text-align: center;
+}
+
+/* Form IDs */
+#edate-label {
+    grid-column: 2/3;
+}
+#etime-label {
+    grid-column: 2/3;
 }
 
 /* Custom Checkbox */
@@ -152,6 +195,213 @@ nav {
 }
 
 /* Desktop */
-/* @media screen and ( min-width : 800px ) {
+@media screen and ( min-width : 800px ) {
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    nav {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        background-color: #f8f4f4;
+    }
     
-} */
+    /* ID */
+    #site {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    #wrapper {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+    }
+    #map {
+        grid-column: 1/2;
+    
+        height: 100vh;
+        z-index: 2;
+    }
+    #listing {
+        grid-column: 2/3;
+    
+        text-align: center;
+        color: #000000;
+        background-color: #FFFFFF;
+    }
+    #results {
+        padding-top: 5px;
+        padding-bottom: 10px;   
+        color: #000000;
+        background-color: #e0e4ec;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    #filter {
+        padding: 10px 10px;
+        opacity: 0.8;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        color: #ffffff;
+        background-color: #ff4b00;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    
+    /* CLASS */
+    .logo {
+        display: flex;
+        margin: 0 10px;
+        padding: 10px 10px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .logo-orange {
+        color: #ff4b00;
+    }
+    .buttons {
+        grid-column: 2/3;
+        width: 100%;
+    
+        display: flex;
+        margin: auto;
+        justify-content: space-between;
+    }
+    
+    /* Popup Filter */
+    .filter-popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50%;
+        z-index: 9;
+        padding: 10px 10px;
+        border-radius: 15px;
+        color: #ffffff;
+        background-color: #8d99ae;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }    
+    .check-center {
+        padding-left: 33%;
+    }
+
+    /* Popup Form */
+    .add-btn {
+        padding: 10px 10px;
+        opacity: 0.8;
+        border-radius: 10px;
+        margin-right: 10px;
+        border: none;
+        cursor: pointer;
+        color: #ffffff;
+        background-color: #ff4b00;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .form-popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50%;
+        z-index: 9;
+        padding: 10px 10px;
+        border: 3px solid #01183f;
+        border-radius: 25px;
+        background-color: #f5e5de;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .form-container input[type=text] {
+        width: 90%;
+        padding: 15px;
+        border: none;
+        background: #f1f1f1;
+    }
+    .form-container input[type=text]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+    .form-container .btn {
+        background-color: #04AA6D;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom:10px;
+        opacity: 0.8;
+    }
+    .form-container .cancel {
+        background-color: red;
+        border-radius: 10px;
+    }
+    .form-container .post {
+        background-color: #04AA6D;
+    }
+    .form-container .btn:hover, .open-button:hover {
+        opacity: 1;
+    }
+    .form-header {
+        margin: 5px 0 22px 0;
+        line-height: 30px;
+    }
+    .form-spacing {    
+        margin: 5px 0 22px 0;
+        line-height: 22.5px;
+    }
+    .form-inside-spacing {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .start-input {
+        grid-column: 1/2;
+        width: 60%;
+        text-align: center;
+    }
+    .end-input {
+        grid-column: 2/3;
+        width: 60%;
+        text-align: center;
+    }
+
+    /* Form IDs */
+    #edate-label {
+        grid-column: 2/3;
+    }
+    #etime-label {
+        grid-column: 2/3;
+    }
+    
+    /* Custom Checkbox */
+    .container {
+        cursor: pointer;
+    }
+    .container input {
+        cursor: pointer;
+    }    
+    .center {
+        text-align: center;
+    }
+    
+    /* Posts */
+    .post-wrapper {
+        margin-bottom: 10px;
+        text-align: left;
+        border: 3px solid #f0ac8e;
+    }
+    .post-info-wrapper {
+        display: flex;
+    }
+    .post-info {
+        display: block;
+        margin: auto;
+        font-size: larger;
+    }
+    .post-img {
+        height: 150px;
+        width: 150px;
+    }
+}

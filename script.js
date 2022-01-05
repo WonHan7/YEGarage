@@ -3,22 +3,40 @@ var val = true;
 $(function() {
 
     alert("Thank you for visiting YEGarage.com! This website is still a work in-progress.");
-    $('#addBtn').on('click', addListing);
-    $('#postBtn').on('click', Validate);
-    $('#closeBtn').on('click', closeForm);
+    $('#addBtn').on('click', openForm);
+    $('#closeAdd').on('click', closeForm);
+    $('#postBtn').on('click', validateForm);
+    $('#filter').on('click', openFilter);
+    $('#closeFilter').on('click', closeFilter);
 
     const edmonton = { lat: 53.533, lng: -113.506 };
+
     // The map, centered at Uluru
     const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 12,
         center: edmonton,
     });
-    
+
 })
 
-function addListing ()
+function openForm ()
 {
-    $('#myForm').css("display", "block");
+    $('#myForm').css("display", "grid");
+}
+
+function closeForm ()
+{    
+    $('#myForm').css("display", "none");
+}
+
+function openFilter ()
+{    
+    $('#myFilter').css("display", "block");
+}
+
+function closeFilter ()
+{    
+    $('#myFilter').css("display", "none");
 }
 
 function postListing ()
@@ -28,8 +46,7 @@ function postListing ()
     let pic = $('input[name=images]').val();
     let sdate = $('input[name=sdate]').val();
     let edate = $('input[name=edate]').val();
-    let stime = $('input[name=stime]').val();
-    let etime = $('input[name=etime]').val();
+    let time = $('input[name=time]').val();
     let check = $('input[type=checkbox]:checked');
 
     // Post Formatting - Add Google Maps Pin
@@ -47,7 +64,7 @@ function postListing ()
     let p3 = document.createElement('p');
 
     p1.appendChild(document.createTextNode("Date: " + sdate + " ~ " + edate));
-    p2.appendChild(document.createTextNode("Time: " + stime + " ~ " + etime));   //Change to 12 hour format with AM/PM
+    p2.appendChild(document.createTextNode("Time: " + time));   //Change to 12 hour format with AM/PM
     
     for (let i = 0; i < check.length; i++) {
         if (i == check.length-1)
@@ -93,34 +110,37 @@ function postListing ()
     });
 }
 
-function closeForm ()
-{    
-    $('#myForm').css("display", "none");
-}
-
-function Validate ()
+function validateForm ()
 {
     let addr = $('input[name=address]').val();
     let sdate = $('input[name=sdate]').val();
     let edate = $('input[name=edate]').val();
-    let stime = $('input[name=time]').val();
-    let etime = $('input[name=time]').val();
+    let time = $('input[name=time]').val();
 
     if (addr == "")
     {
         val = false;
     }
-    if ((sdate == "") || (edate == ""))
+    if (sdate == "")
     {
         val = false;
     }
-    if ((stime == "") || (etime == ""))
+    if (edate == "")
+    {
+        val = false;
+    }
+    // Users can technically choose 1 out of the 3 sections and hit post
+    if (time == "")
     {
         val = false;
     }
 
-    if (val == true)
+    if (val)
     {
         postListing();
+    }
+    else
+    {
+        alert("Please fill out all required fields!");
     }
 }
